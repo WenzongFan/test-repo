@@ -12,6 +12,11 @@ Linux
 
 * [Retext](http://sourceforge.net/p/retext/home/ReText/)
 
+	Install on Ubuntu:
+
+		$ sudo add-apt-repository ppa:mitya57/ppa
+		$ sudo apt-get install retext
+
 Mac
 ---
 
