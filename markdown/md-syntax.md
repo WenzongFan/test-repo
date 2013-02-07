@@ -1,6 +1,5 @@
 # [Markdown 语法说明][1]
 
-
 ## 概述
 ### 宗旨
 易读易写
@@ -55,16 +54,23 @@
 ## 区段元素
 ### 链接
 * 行内式：
-	[link](url "title")
+
+	`[link](url "title")`
 * 参考式：
+
+```
 	[link][linkname]
 
 	[linkname]:	link	"title"
+```
 
    * 隐式链接标记
+
+```
 	[Google][]
 
 	[Google]: http://google.com/
+```
 
 ### 强调
 * 使用星号（*）和底线（_）标记强调字词
@@ -74,30 +80,30 @@
 
 ### 代码
 * 标记行内代码用： ``
-* 插入反引号： `` ` ``
+* 插入反引号： \`\` \` \`\`
 
 ### 图片
 * 行内式：
-``
-![Alt text](/path/to/img.jpg)
-
-![Alt text](/path/to/img.jpg "Optional title")
-``
+```
+	![Alt text](/path/to/img.jpg)
+	
+	![Alt text](/path/to/img.jpg "Optional title")
+```
 
 * 参考式:
-``
-![Alt text][id]
+```
+	![Alt text][id]
 
-[id]: url/to/image  "Optional title attribute"
-``
+	[id]: url/to/image  "Optional title attribute"
+```
 
 ## 其它
 ### 自动链接
-* <http://example.com/> ， <user@mail.com>
+* `<http://example.com/> ， <user@mail.com>`
 
 ### 反斜杠
 * 转义以下字符
-``
+```
 	\   反斜线
 	`   反引号
 	*   星号
@@ -110,7 +116,7 @@
 	-   减号
 	.   英文句点
 	!   惊叹号
-``
+```
 
-参考文档：
-[1]：	http://wowubuntu.com/markdown/index.html	"参考文档"
+
+[1]:	http://wowubuntu.com/markdown/index.html	"参考文档"
