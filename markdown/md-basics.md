@@ -29,18 +29,26 @@ List
 Link
 ---
 * inline:
-	[text])(link "optional title")
+
+	`[text](link "optional title")`
 * reference:
+```
 	[text][linkname]
+
 	[linkname]: link "optional title"
+```
 
 Image
 ---
 * inline:
-	![alt text](/path/to/img.jpg "Title")
+ 
+	`![alt text](/path/to/img.jpg "Title")`
 * reference:
+```
 	![alt text][id]
+	
 	[id]: /path/to/img.jpg "Title"
+```
 
 Code
 ---
