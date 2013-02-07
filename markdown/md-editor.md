@@ -17,6 +17,12 @@ Linux
 		$ sudo add-apt-repository ppa:mitya57/ppa
 		$ sudo apt-get install retext
 
+* vim - [enable MD syntax](http://blog.csdn.net/mixjet/article/details/8351493)
+
+		$ git clone https://github.com/plasticboy/vim-markdown
+		$ cd vim-markdown; cp -r syntax ftdetect ~/.vim
+
+
 Mac
 ---
 
