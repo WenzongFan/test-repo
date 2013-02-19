@@ -13,57 +13,41 @@
 ## Filter records
 	
 	# operators: ==, !=, >, <, >=, <=
-
 	$ awk '$3==0 && $6=="LISTEN" ' netstat.txt
-
 	$ awk ' $3>0 {print $0}' netstat.txt
 
 	# builtin var NR: add table title
-
 	$ awk '$3==0 && $6=="LISTEN" || NR==1 ' netstat.txt
-
 	$ awk '$3==0 && $6=="LISTEN" || NR==1 {printf "%-20s %-20s %s\n",$4,$5,$6}' netstat.txt
 
 ## Built in vars
 
 	$0	current record (whole line)
-
 	$1 ~ $n columns, separated by FS
-
 	FS	column separator, tab or blank space by default
-
 	NF	column numbers
-
 	NR	line numbers, accumulate for all files
-
 	FNR	line numbers, only for current file
-
 	RS	record separator, line break by default
-
 	OFS	column sepatator, blank space by default
-
 	ORS	record separator, line break by default
-
 	FILENAME	input filename
 
-	# output line numbers
+Examples：
 
+	# output line numbers
 	$ awk '$3==0 && $6=="ESTABLISHED" || NR==1 {printf "%02s %s %-20s %-20s %s\n",NR, FNR, $4,$5,$6}' netstat.txt
 
 	# specify separator
-
 	$ awk  'BEGIN{FS=":"} {print $1,$3,$6}' /etc/passwd
 	
 	or
-
 	$ awk  -F: '{print $1,$3,$6}' /etc/passwd
 
 	# specify multiple separators
-
 	$ awk -F '[;:]'
 
 	# specify output separator '\t'
-
 	$ awk  -F: '{print $1,$3,$6}' OFS="\t" /etc/passwd		
 	
 ## String match
@@ -77,21 +61,17 @@
 	$ awk '$6 !~ /WAIT/ || NR==1 {print NR,$4,$5,$6}' OFS="\t" netstat.txt
 
 	or
-
 	$ awk '!/WAIT/' netstat.txt
 	
 ## Split file
 
 	# split file as column 6 and ignore the first line
-
 	$ awk 'NR!=1{print > $6}' netstat.txt
 
 	# print specify columns to file
-
 	$ awk 'NR!=1{print $4,$5 > $6}' netstat.txt
 
 	# if-else-if
-
 	$ awk 'NR!=1{if($6 ~ /TIME|ESTABLISHED/) print > "1.txt";
 	else if($6 ~ /LISTEN/) print > "2.txt";
 	else print > "3.txt" }' netstat.txt
@@ -99,15 +79,12 @@
 ## Stats
 
 	# stats size of all .c/cpp/h files
-
 	$ ls -l  *.cpp *.c *.h | awk '{sum+=$5} END {print sum}'
 
 	# stats connection numbers with array
-
 	$ awk 'NR!=1{a[$6]++;} END {for (i in a) print i ", " a[i];}' netstat.txt
 
 	# stats memery size used by each user (RSS)
-
 	$ ps aux | awk 'NR!=1{a[$1]+=$6;} END { for(i in a) print i ", " a[i]"KB";}'
 
 ## Statements
@@ -123,7 +100,6 @@ Example
 ```
 
 	# awk script, process score.txt
-
 	$ cat cal.awk
 
 #!/bin/awk -f
@@ -161,7 +137,6 @@ END {
 ```
 
 # with '-v' and ENVIRON(need to be exported first)
-
 $ x=5
  
 $ y=10
