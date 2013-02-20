@@ -81,7 +81,7 @@ Equals:
 
 ## sed commands
 
-N:	expand match to current line and next line
+### N:	expand match range to current line and next line
 
 	# do match in two lines each time
 	$ sed 'N;s/my/your/' filename
@@ -89,9 +89,9 @@ N:	expand match to current line and next line
 	# Join two lines with ','
 	$ sed 'N;s/\n/,/' pets.txt
 
-a:	append
+### a:	append
 
-i:	insert
+### i:	insert
 
 	# '1i': insert line before line 1
 	$ sed "1 i insert this line before line 1" filename
@@ -102,7 +102,7 @@ i:	insert
 	# '/fish/a': append line if matched 'fish'
 	$ sed "/fish/a append this line if matched fish" filename
 
-c:	replaced matched lines
+### c:	replaced matched lines
 
 	# '2c': replace line 2
 	$ sed "2 c replace line 2 with this line" filename
@@ -110,13 +110,13 @@ c:	replaced matched lines
 	# '/fish/c': replace line witch matched 'fish'
 	$ sed "/fish/c replace line witch matched fish" filename
 
-d:	delete matched lines
+### d:	delete matched lines
 
 	$ sed '/fish/d' filename
 	$ sed '2d' filename
 	$ sed '2,$d' filename
 
-p:	print
+### p:	print
 
 	# print all lines and lines matched 'fish'
 	$ sed '/fish/p' filename
@@ -132,7 +132,7 @@ p:	print
 
 ## Some hints
 
-* Pattern Space
+### Pattern Space
 
 Something sed will run to, pseudo-code here:
 
@@ -151,7 +151,7 @@ foreach line in file {
 }
 ```
 
-* Address
+### Address
 
 Specify range of sed run to, could be a number or pattern
 
@@ -163,7 +163,7 @@ Address could be relative location:
 	# '+3' means 3 lines after 'dog'
 	$ sed '/dog/,+3s/^/# /g' filename
 
-* Multi-commands
+### Multi-commands
 
 Could separate with semicolon ';', or quote with '{}' as nested cmd
 
@@ -176,7 +176,7 @@ Could separate with semicolon ';', or quote with '{}' as nested cmd
 	# delete lines matched 'This' and remove ' '
 	$ sed '1,${/This/d;s/^ *//g}' pets.txt
 
-* Hold Space
+### Hold Space
 
 Another space after pattern space, some cmds:
 
