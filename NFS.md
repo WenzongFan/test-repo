@@ -1,6 +1,6 @@
 # NFS - Network File System
 
-## transport protocol
+## Transport protocol
 
 NFS -> RPC -> TCP/UDP
 
@@ -15,23 +15,23 @@ RPC: Remote Procedure Call
 		mountd: response mount request
 		nfsd: provide file service
 
-### start nfs server:
+### Startup scripts:
 * Redhat Enterprise:	/etc/rc.d/init.d/nfs
-* Fedora		/etc/rc.d/init.d/nfs
-* SUSE			/etc/init.d/nfsboot
-* Debian		/etc/init.d/nfs-kernel-server, /etc/init.d/nfs-common
-* Ubuntu		/etc/init.d/nfs-kernel-server, /etc/init.d/nfs-common
+* Fedora:		/etc/rc.d/init.d/nfs
+* SUSE:			/etc/init.d/nfsboot
+* Debian:		/etc/init.d/nfs-kernel-server, /etc/init.d/nfs-common
+* Ubuntu:		/etc/init.d/nfs-kernel-server, /etc/init.d/nfs-common
 
-### export list
+### Export fs
 
 * /etc/exports
 
 		# export all list in /etc/exports
 		$ exportfs -a
 
-### exports file
+### Config file /etc/exports
 
-List file system exported, hosts that will access those fs.
+List what fs will be exported, and which clients will access them.
 
 	fs_to_export	host1(options) host2 ...
 
@@ -122,4 +122,3 @@ Some special NFS servers/devices:
 * autofs - Linux autofs driver reside in kernel
 
 * /etc/init.d/autofs - script to run automount
-
