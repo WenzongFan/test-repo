@@ -8,4 +8,4 @@ Check available modules from each site, such as *mirrors.ustc.edu.cn*:
 
 Setup a Fedora mirror refer to [http://fedoraproject.org/wiki/Infrastructure/Mirroring/zh-cn]
 
-Mirror scripts refer to [git://github.com/dlbewley/mirror-fedora]
+Mirror scripts refer to [git://github.com/dlbewley/mirror-fedora](git://github.com/dlbewley/mirror-fedora)
