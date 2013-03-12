@@ -53,7 +53,14 @@ Config options:
 	Tlist_Max_Submenu_Item : 子菜单项上限值。如子菜单项超出此上限将会被分隔到多个子菜单中。缺省值为25
 	Tlist_Max_Tag_Length : 标签菜单中标签长度上限
 
-### Keys/usage:
+### Usage:
+
+	:TlistOpen 打开并将输入焦点至于标签列表窗口
+	:TlistClose 关闭标签列表窗口
+	:TlistToggle 切换标签列表窗口状态(打开←→关闭)，标签列表窗口是否获得焦点取决于其他配置
+	ctl-w ＋ w 或ctl-w ＋ 方向键 窗口切换
+
+### Keys:
 
 	<CR> : 代码窗口跳转到标签列表窗口中光标所在标签定义处
 	o : 在新建代码窗口中跳转到标签列表窗口中光标所在标签定义处
