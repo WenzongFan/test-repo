@@ -1,1 +1,3 @@
 # NIS 
+
+## Setup nis
